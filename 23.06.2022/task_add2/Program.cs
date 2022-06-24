@@ -9,4 +9,4 @@
 Console.WriteLine("Введите число:");
 int a = Convert.ToInt32(Console.ReadLine());
 if ((0 < a/100) & (a/100 < 10)) Console.WriteLine(a%10);
-else Console.WriteLine("Введено некоректное число");
+Console.WriteLine("Введено некоректное число");

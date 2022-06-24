@@ -8,5 +8,6 @@ int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число:");
 int b = Convert.ToInt32(Console.ReadLine());
 
-if (a>b) Console.WriteLine($"Число {a} больше {b}");
+if (a == b) Console.WriteLine($"Число {a} равно {b}");
+else if (a>b) Console.WriteLine($"Число {a} больше {b}");
 else Console.WriteLine($"Число {b} больше {a}");
