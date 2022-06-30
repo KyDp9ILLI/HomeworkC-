@@ -10,13 +10,8 @@ int a = Convert.ToInt32(Console.ReadLine());
 string Week(int day)
 {
     switch(day){
-    case 1 : return "Не выходной";
-    case 2 : return "Не выходной";
-    case 3 : return "Не выходной";
-    case 4 : return "Не выходной";
-    case 5 : return "Не выходной";
-    case 6 : return "Выходной";
-    case 7 : return "Выходной";
+    case 1: case 2: case 3: case 4: case 5: return "Не выходной";
+    case 6: case 7: return "Выходной";
     default : return "Некоректно введено число";
     }
 }
