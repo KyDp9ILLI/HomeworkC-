@@ -38,22 +38,15 @@ int[,] CreateMatrixRndInt(int m, int n, int min, int max)
     return arr;
 }
 
-void FindElement(int[,] arr,int line, int column)
+void FindElement(int[,] arr, int line, int column)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
+    if (line< arr.GetLength(0)+1 && column <arr.GetLength(1)+1
+    )
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            // Console.WriteLine(arr.GetLength(0));
-            if (i == line-1 && j == column-1){
-                Console.WriteLine($"Число находящееся в строке {line} и столбце {column} является {arr[i, j]}") ; 
-                return; }
-        }
-        
+        Console.WriteLine($"Число находящееся в строке {line} и столбце {column} является {arr[line-1, column-1]}");
     }
-    Console.WriteLine("Нет нужного элемента");
+    else Console.WriteLine("Нет нужного элемента");
 }
-
 
 void PrintMatrix(int[,] arr)
 {
@@ -78,4 +71,4 @@ Console.WriteLine("Введите нужную строку");
 int lin = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите нужный столбец");
 int col = Convert.ToInt32(Console.ReadLine());
-FindElement(array,lin,col);
+FindElement(array, lin, col);

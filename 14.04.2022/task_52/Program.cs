@@ -48,7 +48,7 @@ double[] Average(int[,] arr)
                 count++;
             }
             
-            avg[j] = sum/count;
+            avg[j] = Math.Round(sum/count,2);
 
         }
         
@@ -93,4 +93,3 @@ PrintMatrix(array);
 double[] avarage = Average(array);
 Console.WriteLine("Среднее арифметическое столбцов");
 PrintAvg(avarage);
-// Average(array);
