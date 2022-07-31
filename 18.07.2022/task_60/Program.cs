@@ -16,11 +16,6 @@ int sizeN = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов:");
 int sizeH = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите минимальное значение элементов массива:");
-int minimal = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите максимальное значение элементов массива:");
-int maximal = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"");
 
 void WriteArray(int[,,] array)
@@ -39,22 +34,23 @@ void WriteArray(int[,,] array)
     }
 }
 
-int[,,] CreateArray(int m, int n, int h, int min, int max)
+int[,,] CreateArray(int m, int n, int h)
 {
     int[,,] array = new int[m, n, h];
     int[] temp = new int[array.GetLength(0) * array.GetLength(1) * array.GetLength(2)];
-    int number;
+
+    Random rnd = new Random();
     for (int i = 0; i < temp.GetLength(0); i++)
     {
-        temp[i] = new Random().Next(min, max + 1);
-        number = temp[i];
+        temp[i] = rnd.Next(10,100);
+        int number = temp[i];
         if (i >= 1)
         {
             for (int j = 0; j < i; j++)
             {
                 while (temp[i] == temp[j])
                 {
-                    temp[i] = new Random().Next(min, max + 1);
+                    temp[i] = rnd.Next(10,100);
                     j = 0;
                     number = temp[i];
                 }
@@ -77,5 +73,5 @@ int[,,] CreateArray(int m, int n, int h, int min, int max)
     return array;
 }
 
-int[,,] arr = CreateArray(sizeM,sizeN,sizeH, minimal, maximal);
+int[,,] arr = CreateArray(sizeM,sizeN,sizeH);
 WriteArray(arr);
