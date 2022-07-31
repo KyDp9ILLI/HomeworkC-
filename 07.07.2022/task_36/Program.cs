@@ -54,6 +54,6 @@ int SumOddIndex (int[] arr)
 }
 
 int[] array = CreateArrayRndInt(sizeArr, minimal, maximal);
-//PrintArray(array);
+PrintArray(array);
 int summa = SumOddIndex(array);
 Console.WriteLine("Сумма элементов, стоящих на нечетных позициях = " + summa);
